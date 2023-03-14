@@ -1,0 +1,23 @@
+[
+    {
+        "id": "id-1",
+        "imageSrc": "/images/image_1.jpeg",
+        "title": "Dining Chair by esteban+moreno",
+        "description": "With a new design approach for flexible use: from a dinner for two to a big celebration.",
+        "price": 100
+    },
+    {
+        "id": "id-2",
+        "imageSrc": "/images/image_2.jpeg",
+        "title": "Underwater wearable watches",
+        "description": "An accessory for any occasion, from a nice dinner to an underwater swim.",
+        "price": 90
+    },
+    {
+        "id": "id-3",
+        "imageSrc": "/images/image_3.jpeg",
+        "title": "Sac Marin Yellow",
+        "description": "Marinetmarine store backpack. The Sac Marin can be worn as a backpack or as a bag over one shoulder.",
+        "price": 108
+    }
+]

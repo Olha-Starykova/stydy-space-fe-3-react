@@ -1,66 +1,78 @@
 
-
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Hello from "./components/Hello";
+import Card from './components/Card/Card';
+import paintings from "./paintings.json";
+import HeartButton from "./components/HeartButton/HeartButton"
+import "./App.css"
 
 function App() {
 
-//Task 1
 
-let usersNames = ['Mike', 'Bob', 'Nikola'];
-let users = {};
+    return (
 
-[users.make, users.bob, users.nikola] = usersNames;
-//console.log(users)// {make: 'Mike', bob: 'Bob', nikola: 'Nikola'}
+        
+        <div>
 
-//Task 2
+{/*            
+            <ul className='list' >
+                {paintings.map((painting) => (
+                    <li className='list-item' key={painting.id}>
+                        <HeartButton></HeartButton>
+                        <Card
+                        canBuy="canBuy"    
+                        imageSrc={painting.imageSrc}  
+                        // title={painting.title="DINING CHAIR BY ESTEBAN+MORENO "} ??? как передать пропсы по условию в map
+                        description={painting.description}
+                        price={painting.price}
+                        />
+                        <div className='wrapperBtn' >
+                        <Button >LEARN MORE</Button>
+                        <Button isLight="black">BUY NOW</Button> 
+                        </div>
+                       
+                    </li>
+                ))}
+            </ul> */}
 
-let salaries = {
-  "Mike": 1500,
-  "Bob": 1800,
-  "Nikola": 1700,
-};
-
-
-function maxSalary(salaries){
-  let maxName = null;
-  let maxSalary = 0;
-
- for(const [name, salary] of Object.entries(salaries)) {
-    if(maxSalary < salary){
-          maxSalary = salary;
-          maxName = name;
-    }   
-  }
- return maxName
+            <ul className='list' >
+                <li className='list-item' >
+               <HeartButton hasSale={true}  ></HeartButton>
+                        <Card
+                        hasSale={"hasSale"}   
+                        canBuy="canBuy"    
+                        imageSrc="/images/image_1.jpeg"  
+                        title="Dining Chair by esteban+moreno"
+                        description="With a new design approach for flexible use: from a dinner for two to a big celebration."
+                        price={100}
+                        priceSale={120}
+                        />
+            </li>
+                <li className='list-item' >
+                     <HeartButton></HeartButton>
+                        <Card
+                        imageSrc="/images/image_2.jpeg" 
+                        title="Underwater wearable watches"
+                        description="An accessory for any occasion, from a nice dinner to an underwater swim."
+                        price={90}
+                        />
+                </li>
+                <li className='list-item' >
+                     <HeartButton></HeartButton> 
+                        <Card
+                        imageSrc="/images/image_3.jpeg" 
+                        title="Sac Marin Yellow"
+                        description="Marinetmarine store backpack. The Sac Marin can be worn as a backpack or as a bag over one shoulder."
+                        price={108}
+                        />
+                </li>
+            </ul>
+    </div> 
+    
+    )
 }
-
-
-//console.log(maxSalary(salaries))  //Bob
-
-
-//Task 3
-
-let userss = {mike: 'Mike', bob: 'Bob', nikola: 'Nikola'};
-
-let { mike: userMike, bob: UserBob, nikola: UserNikola} = userss;
-//console.log(userMike, UserBob, UserNikola)
-
-
-
-//Task 4
-
-  return (
-   <div style={{ backgroundColor: '#46B1DE' }} className="wrapper">
-    <Hello></Hello>
-    <button onClick={() => console.log('Click on button')}>Button</button>
-    </div>
-    );
-}
-const domContainer = document.querySelector('#root');
-const root = ReactDOM.createRoot(domContainer);
-root.render(<App />);
+// const domContainer = document.querySelector('#root');
+// const root = ReactDOM.createRoot(domContainer);
+// root.render(<App />);
 
 export default App;
