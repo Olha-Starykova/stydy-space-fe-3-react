@@ -1,0 +1,55 @@
+.container-hero {
+    display: flex;
+    justify-content: center;
+    width: 800px;
+    height: 1024px;
+    background: url(/public/images/hero.jpeg);
+    filter: drop-shadow(7px 0px 20px rgba(0, 0, 0, 0.15));
+    background-size: cover;
+    background-position: center;
+    padding: 100px 100px 40px 100px;
+    justify-content: space-between;
+     flex-direction: column;
+}
+
+.link {
+text-decoration: none;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 60px;
+letter-spacing: 0.02em;
+color: #FFFFFF;
+}
+
+.title {
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 32px;
+line-height: 48px;
+color: #FFFFFF;
+}
+
+.futer {
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 30px;
+letter-spacing: 0.02em;
+color: #FFFFFF;
+display: flex;
+flex-direction: column;
+}
+
+.address {
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+letter-spacing: 0.02em;
+color: #FFFFFF;
+}

@@ -1,0 +1,178 @@
+.container-RegistrationForm {
+    display: flex;
+    width: 640px;
+    height: 1024px;
+    justify-content: center;
+    padding: 200px 100px 20px 100px;
+}
+
+.registration-form {
+    width: 821px;
+    height: 247px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+    border: 0;  
+    background-color: rgba(0, 0, 0, 0);
+    outline: 0;
+    
+}
+
+.form-title {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 48px;
+    letter-spacing: 0.02em;
+    color: #000000;
+    margin: 0px;
+}
+
+.form-description {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    color: #8D8D8D;
+    margin-bottom: 70px;
+}
+
+.fill-out-the-text {
+    display: block;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    /* color: $text; */
+
+}
+
+.form-direction {
+    display: flex;
+    align-items: center;
+    margin: 45px 20px;
+
+
+}
+
+.div-input {
+    display: flex;
+    flex-direction: column;
+    }
+
+.label-title {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.02em;   
+    color: #000000;
+    margin-top: 30px;
+} 
+
+.svg-user {
+    fill: #000000;
+    position: absolute;
+    top: 15%;
+    left: 0%;
+    display: inline-block;
+    margin: 7px 10px;
+    padding: 0;
+}
+
+.hatch {
+    position: absolute;
+    width: 30px;
+    height: 0px;
+    left: 34px;
+    top: 50%;
+    border: 1px solid #000000;
+    transform: rotate(90deg);
+}
+
+.input-title {
+    border: 0;
+    border-bottom: 1px solid #000;
+    background-color: rgba(0, 0, 0, 0);
+    outline: 0;
+}
+
+.input-title-invalid {
+    border-bottom: 1px dashed rgb(239, 44, 44);
+}
+
+.input-title-invalid-message {
+    
+}
+
+.form-submit-black {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.02em;  
+    color: #FFFFFF;
+    width: 435px;
+    height: 65px;
+    background: #000000;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.form-submit-white {
+    position: relative;
+    width: 435px;
+    height: 65px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    color: #000000;
+    border-radius: 20px;
+    border: 1px solid #8D8D8D;
+    border-radius: 20px;
+}
+
+.vector-svg {
+    position: absolute;
+    right: 320px;  
+    top: 475px;
+}
+
+.div-submit {
+    margin: 70px 0 150px 0;
+   
+}
+
+.form-futer {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    color: #000000;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.form-futer-link {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    color: #3EC1F3;
+    padding-left: 10px;
+}
