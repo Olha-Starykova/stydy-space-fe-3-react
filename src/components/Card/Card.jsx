@@ -6,7 +6,7 @@ import './index.css'
 function Card({category, title, image, description, author, authorPosition, authorAvatar,publishedAt }) {
 
     let dates = publishedAt.split(' ')
-     console.log(dates[0])
+    // console.log(dates[0])
      
 
     function formatDate(date) {
@@ -28,6 +28,9 @@ console.log(formatDate(dates[0]));
 
     return (
         <>
+            
+            
+            
             <div className="wrapper">
                  <div className='category'>
                     <span className='category-span' > {category}</span>
@@ -37,21 +40,15 @@ console.log(formatDate(dates[0]));
                 <div className='list-wrapper' >
                     <h2 className='title' > {title}</h2>
                     <p className='description' > {description}</p>
-                    <span className='line' ></span>
-
-                    
-                    
+                    <span className='line' ></span>               
                     <div className='author-wrapper' >
                         <img className='img-authorAvatar' src={authorAvatar} alt={title} width="50" height='50' />
                         <div className='author-wrapper-titile' >
                           <h3 className='author' > {author}</h3>
                           <h3 className='authorPosition' > {authorPosition}</h3>  
-                        </div>
-                         
+                        </div>               
                     </div>
-                    
                 </div>
-               
             </div>
         </>
     )
