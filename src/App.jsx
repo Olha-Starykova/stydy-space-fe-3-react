@@ -1,66 +1,72 @@
-
-
-
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import Hello from "./components/Hello";
+import Card from './components/Card/Card';
+import './App.css'
+import axios from 'axios';
 
 function App() {
 
-//Task 1
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-let usersNames = ['Mike', 'Bob', 'Nikola'];
-let users = {};
+    useEffect(() => {
+        setIsLoading(true)
+        axios.get('/articles.json').then((response) => {
+            console.log(response.data)
+            setData(response.data);
+            setIsLoading(false);
+        }).catch((err) => {
+            console.log(err)
+        })
+    }, [])
 
-[users.make, users.bob, users.nikola] = usersNames;
-//console.log(users)// {make: 'Mike', bob: 'Bob', nikola: 'Nikola'}
-
-//Task 2
-
-let salaries = {
-  "Mike": 1500,
-  "Bob": 1800,
-  "Nikola": 1700,
-};
-
-
-function maxSalary(salaries){
-  let maxName = null;
-  let maxSalary = 0;
-
- for(const [name, salary] of Object.entries(salaries)) {
-    if(maxSalary < salary){
-          maxSalary = salary;
-          maxName = name;
-    }   
-  }
- return maxName
-}
-
-
-//console.log(maxSalary(salaries))  //Bob
-
-
-//Task 3
-
-let userss = {mike: 'Mike', bob: 'Bob', nikola: 'Nikola'};
-
-let { mike: userMike, bob: UserBob, nikola: UserNikola} = userss;
-//console.log(userMike, UserBob, UserNikola)
-
-
-
-//Task 4
 
   return (
-   <div style={{ backgroundColor: '#46B1DE' }} className="wrapper">
-    <Hello></Hello>
-    <button onClick={() => console.log('Click on button')}>Button</button>
-    </div>
+
+    <>
+
+      <div className='container' >
+          <ul className='list' >
+                {data.map((el) => (
+                    <li className='list-item' key={el.id}>
+                       
+                        <Card
+                         image={el.image}  
+                         title={el.title} 
+                         description={el.description}
+                         author={el.author.name}
+                         authorPosition={el.author.position}
+                         authorAvatar={el.author.avatar}
+                      category={el.category.title}
+                      publishedAt={el.published_at}
+                         />
+                       
+                    </li>
+                ))}
+            </ul> 
+      </div>  
+  
+        
+  
+               {/* <div className="wrapper">
+                {isLoading && <div>Loading...</div>}
+                {data.map((el, index) => {
+                    return <div key={index}>{el.title}</div>
+                })
+
+                }
+            </div> */}
+   
+    </>
+  //  <div style={{ backgroundColor: '#46B1DE' }} className="wrapper">
+  //   <Hello></Hello>
+  //   <button onClick={() => console.log('Click on button')}>Button</button>
+  //   </div>
     );
 }
-const domContainer = document.querySelector('#root');
-const root = ReactDOM.createRoot(domContainer);
-root.render(<App />);
+// const domContainer = document.querySelector('#root');
+// const root = ReactDOM.createRoot(domContainer);
+// root.render(<App />);
 
 export default App;
