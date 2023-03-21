@@ -87,6 +87,11 @@
     flex-wrap: wrap; */
 }
 .list-link {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
     text-decoration: none;
     font-family: 'Lora';
     font-style: normal;
@@ -99,4 +104,25 @@
 
 .list-link:hover {
     color: #D4A373;
+}
+
+.list-link-all {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    text-decoration: none;
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 25px;
+    color: #495057;
+    margin-right: 20px;
+    margin-bottom: 30px;
+}
+
+.class {
+    border: 2px solid red;
 }

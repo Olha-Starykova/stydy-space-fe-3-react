@@ -14,7 +14,7 @@ function App() {
     useEffect(() => {
        // setIsLoading(true)
         axios.get('/articles.json').then((response) => {
-            console.log(response.data)
+         //   console.log(response.data)
             setData(response.data);
          //   setIsLoading(false);
         }).catch((err) => {
@@ -22,15 +22,39 @@ function App() {
         })
     }, [])
   
-  const [rank, setRank] = useState([])
+  const [rank, setRank] = useState([]);
+
   useEffect(() => {
     axios.get('/categories.json').then((response) => {
-      console.log(response.data)
+    //  console.log(response.data)
       setRank(response.data)
     }).catch((err) => {
-        console.log(err)
-      })
-    }, [])
+      console.log(err)
+    })
+  }, []);
+
+
+  const [activ, setActiv] = useState(0);
+  
+
+  function setActiveIndex(index) {
+   
+    setActiv(index)
+    setIsShow(false)
+  }
+  
+
+  const activeOptionLabel = rank[activ];
+  console.log(activeOptionLabel)//1
+
+  const activeOptionLabel2 = data.filter((el) => el.category_id === activeOptionLabel.id)
+  console.log(activeOptionLabel2)
+  
+const [isShow, setIsShow]  = useState(false)
+
+  const toggleArticle = () => {isShow ? setIsShow(false) : setIsShow(true)}
+
+
 
   return (
 
@@ -39,14 +63,17 @@ function App() {
         <h1 className='main-title' >Popular topics</h1>
 
         <ul className='list-rank'>
-            <a className='list-link' href="">All</a>
-            {rank.map((el) => (
-              <li className='list-item-rank' key={el.id}>
-                <Categories
-                  title={el.title}
-                > 
-                </Categories>
-
+          <button className='list-link-all' 
+           onClick={toggleArticle}
+          >All</button>
+            {rank.map((el, index) => (
+              <li className='list-item-rank'
+                key={el.id} >
+                <button className='list-link' onClick={() => setActiveIndex(index)}
+             
+                >
+                <span>{el.title}</span>
+                  </button>
               </li>
             ))}
           </ul>
@@ -54,8 +81,24 @@ function App() {
 
      
         <ul className='list' >
-        
-                {data.map((el) => (
+          { isShow ? data.map((el, index) => (
+                    <li className='list-item' key={el.id}>
+                        <Card
+                         image={el.image}  
+                         title={el.title} 
+                         description={el.description}
+                         author={el.author.name}
+                         authorPosition={el.author.position}
+                         authorAvatar={el.author.avatar}
+                         category={el.category.title}
+                         publishedAt={el.published_at}
+                         />
+                       
+                    </li>
+                ))
+            :
+
+            activeOptionLabel2.map((el, index) => (
                     <li className='list-item' key={el.id}>
                         <Card
                          image={el.image}  
@@ -70,7 +113,28 @@ function App() {
                        
                     </li>
                 ))}
-            </ul> 
+        </ul> 
+        
+
+
+{/*          
+        <ul className='list' >
+                {  activeOptionLabel2.map((el, index) => (
+                    <li className='list-item' key={el.id}>
+                        <Card
+                         image={el.image}  
+                         title={el.title} 
+                         description={el.description}
+                         author={el.author.name}
+                         authorPosition={el.author.position}
+                         authorAvatar={el.author.avatar}
+                         category={el.category.title}
+                         publishedAt={el.published_at}
+                         />
+                       
+                    </li>
+                ))}
+            </ul>  */}
       </div>  
   
         

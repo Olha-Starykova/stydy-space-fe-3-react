@@ -23,14 +23,11 @@ function Card({category, title, image, description, author, authorPosition, auth
     return [day, month, year].join('.');
 }
  
-console.log(formatDate(dates[0]));
+//console.log(formatDate(dates[0]));
 
 
     return (
         <>
-            
-            
-            
             <div className="wrapper">
                  <div className='category'>
                     <span className='category-span' > {category}</span>
